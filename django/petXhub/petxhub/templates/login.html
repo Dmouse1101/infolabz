@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} PetXhub | Login {% endblock %}
+{% block main %}
+<!--/inner-page-->
+<div class="inner-banner">
+</div>
+<section class="w3l-breadcrumb">
+  <div class="container">
+    <ul class="breadcrumbs-custom-path">
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Login</li>
+    </ul>
+  </div>
+</section>
+<!--//inner-page-->
+
+<section class="wthree-row py-5 about-main" id="contact">
+<div class="map-content-9 pt-lg-5">
+      <h5 class="mb-sm-4 mb-3">Login Details</h5>
+      <form action="/loginuser" method="post" class="mx-auto">
+        {% csrf_token %}
+        <div class="twice">
+          <input type="email" class="form-control" name="email" id="w3lSender" placeholder="Email" required="">
+        </div>
+        <div class="twice mt-4">
+          <input type="password" class="form-control" name="password" id="w3lSubject" placeholder="Password" required="">
+        </div>
+        <span><a class="forget-pwd text-success" href="#">Forget Password ?</a></span>
+        <div class="text-two">
+          <button type="submit" class="btn btn-primary btn-style mt-4 d-sm-inline d-block">Login</button>
+        </div><br>
+      </form>
+    </div>
+</section>
+{% endblock %}

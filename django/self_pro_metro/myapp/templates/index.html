@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metro booking home page</title>
+  </head>
+  <body>
+    <h1>hello user</h1>
+    <!-- <p>{{context.showdata}}</p> -->
+    <form action="/bookmetro" method="post">
+      {% csrf_token %} {%if showdata %}
+      <select name="first" id="first">
+        {% for i in showdata %}
+        <option value="{{i.id}}">{{i.station_name}}</option>
+        {% endfor %}
+      </select>
+
+      <select name="second" id="second">
+        {% for i in showdata %}
+        <option value="{{i.id}}">{{i.station_name}}</option>
+        {% endfor %}
+      </select>
+      {%endif%}
+      <button id="submit">search</button>
+    </form>
+  </body>
+</html>

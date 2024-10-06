@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index page</title>
+</head>
+<body>
+    <form method="post" action="/fetchcontactus">
+         {% csrf_token %}
+        Name:<input type="text" name="uname"><br>
+        Email:<input type="email" name="uemail"><br>
+        phone:<input type="tel" name="uphone"><br>
+        phone:<textarea rows="4" cols="8" name="umessage"></textarea><br>
+        <input type="submit" name="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>Flight Booking Form a Flat Responsive Widget Template :: w3layouts </title>
+	<!-- Meta tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Flight Booking Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
+	/>
+	<script type="application/x-javascript">
+		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+	</script>
+	<!-- Meta tags -->
+	<!--stylesheets-->
+	<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' media="all">
+	<!--//style sheet end here-->
+	<!-- Calendar -->
+	<link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}" />
+	<!-- //Calendar -->
+	<link href="{% static 'css/wickedpicker.css' %}" rel="stylesheet" type='text/css' media="all" />
+	<!-- Time-script-CSS -->
+
+	<link href="{% static 'fonts.googleapis.com/css?family=Roboto:300,400,500,700' %}" rel="stylesheet">
+</head>
+
+<body>
+	<h1 class="header-w3ls">
+		Flight Booking Form</h1>
+	<div class="appointment-w3">
+		<form action="/submited" method="post">
+			{% csrf_token%}
+			<div class="personal">
+				<h2>Personal Details</h2>
+				<div class="main">
+					<div class="form-left-w3l">
+
+						<input type="text" class="top-up" name="name" placeholder="Name" required="">
+					</div>
+					<div class="form-right-w3ls ">
+
+						<input type="text" class="top-up" name="last name" placeholder="Last Name" required="">
+						<div class="clearfix"></div>
+					</div>
+
+				</div>
+				<div class="main">
+					<div class="form-left-w3l">
+
+						<input type="email" name="email" placeholder="Email" required="">
+					</div>
+					<div class="form-right-w3ls ">
+
+						<input class="buttom" type="text" name="phone number" placeholder="Phone Number" required="">
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="information">
+				<h3>Trip Information</h3>
+				<div class="main">
+
+					<div class="form-left-w3l">
+						<select class="form-control" name="trip-type">
+					<option value="">Type Of Trip</option>
+						<option>One Way</option>
+						<option>Round Way</option>
+						<option>Hourly</option>
+					</select>
+					</div>
+					<div class="form-right-w3ls">
+						<select class="form-control" name="trip-class">
+					<option value="">Tavel Class</option>
+						<option>Economy Class</option>
+						<option>First Class</option>
+						<option>Business Class</option>
+						<option>Premium Class</option>
+					</select>
+					</div>
+				</div>
+				<div class="main">
+
+					<div class="form-left-w3l">
+						<select class="form-control" name="start-country">
+					<option value="">Departure Country</option>
+						<option value="Oman">Oman</option>
+													<option value="Australia">Australia</option>
+													<option value="America">America</option>
+													<option value="London">London</option>
+													<option value="Goa">Goa</option>
+													<option value="Canada">Canada</option>
+													<option value="Srilanka">Srilanka</option>
+					</select>
+					</div>
+					<div class="form-right-w3ls">
+						<select class="form-control" name="end-country">
+					<option value="">Destination Country</option>
+						<option value="Oman">Oman</option>
+													<option value="Australia">Australia</option>
+													<option value="America">America</option>
+													<option value="London">London</option>
+													<option value="Goa">Goa</option>
+													<option value="Canada">Canada</option>
+													<option value="Srilanka">Srilanka</option>
+					</select>
+					</div>
+				</div>
+				<div class="main">
+					<div class="form-left-w3l">
+						<input id="datepicker" name="start-date" type="text" placeholder="Departure Date &" required="">
+						<input type="text" id="timepicker" name="start-time" class="timepicker form-control hasWickedpicker" placeholder="Time" required=""
+						 onkeypress="">
+						<div class="clear"></div>
+					</div>
+					<div class="form-right-w3ls">
+						<input id="datepicker1" name="end-date" type="text" placeholder="Return Date &" required="">
+
+						<input type="text" id="timepicker1" name="end-time" class="timepicker1 form-control hasWickedpicker" placeholder="Time" required=""
+						 onkeypress="">
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="main">
+
+					<div class="form-left-w3l">
+						<select class="form-control" name="airport-type">
+					<option value="">Airport</option>
+						<option value="A Airport">A Airport</option>
+													<option value="B Airport">B Airport</option>
+													<option value="C Airport">C Airport</option>
+													<option value="D Airport">D Airport</option>
+													<option value="E Airport">E Airport</option>
+													<option value="other">and other</option>
+					</select>
+					</div>
+					<div class="form-right-w3ls">
+						<select class="form-control" name="luggage">
+					<option value="">Number Of Luggage</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="more">and more</option>
+					</select>
+					</div>
+				</div>
+				<div class="main">
+					<div class="form-left-w3l">
+
+						<input type="text" name="air-line-name" placeholder="AirLine" required="">
+					</div>
+					<div class="form-right-w3ls ">
+
+						<input type="text" name="air-line-number" placeholder="Flight Number" required="">
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="main">
+
+					<div class="form-left-w3l">
+						<select class="form-control" name="adults">
+					<option value="">Number of Adults</option>
+						<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>and more</option>
+					</select>
+					</div>
+					<div class="form-right-w3ls">
+						<select class="form-control" name="child">
+					<option value="">Number of Children</option>
+						<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>and more</option>
+					</select>
+					</div>
+				</div>
+				<div class="main">
+
+					<div class="form-left-w3l">
+						<select class="form-control" name="hotel-type">
+					<option value="">Preferred Hotel brand</option>
+						<option value="A Hoter">A Hotel</option>
+													<option value="B Hotel">B Hotel</option>
+													<option value="C Hotel">C Hotel</option>
+													<option value="D Hotel">D Hotel</option>
+													<option value="E Hotel">E Hotel</option>
+													<option value="other">and other</option>
+					</select>
+					</div>
+					<div class="form-right-w3ls">
+						<select class="form-control" name="vehicle">
+					<option value="">How will you Pickup</option>
+													<option value="Car">Car</option>
+													<option value="Auto">Auto</option>
+													<option value="Cab">Cab</option>
+													<option value="Other">Other </option>
+					</select>
+					</div>
+				</div>
+			</div>
+			<div class="passport">
+				<h3>Traveler's Details</h3>
+				<div class="main">
+					<div class="form-left-w3l">
+
+						<input type="text" name="passport-number" placeholder="Passport number" required="">
+					</div>
+					<div class="form-right-w3ls">
+						<input id="datepicker2" class="date-width" name="passport_exp_date" type="text" placeholder="Passport Expiration Date" required="">
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="form-control-w3l">
+				<textarea name="Message" placeholder="Any Message..."></textarea>
+			</div>
+			<div class="btnn">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+	<div class="copy">
+		<p>&copy;2018 Flight Booking Form. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a></p>
+	</div>
+	<!-- js -->
+	<script type='text/javascript' src='{% static "js/jquery-2.2.3.min.js" %}'></script>
+	<!-- //js -->
+	<!-- Calendar -->
+	<script src="{% static 'js/jquery-ui.js' %}"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar -->
+	<!-- Time -->
+	<script type="text/javascript" src="{% static 'js/wickedpicker.js' %}"></script>
+	<script type="text/javascript">
+		$('.timepicker,.timepicker1').wickedpicker({ twentyFour: false });
+	</script>
+	<!-- //Time -->
+
+</body>
+
+</html>

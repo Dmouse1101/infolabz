@@ -1,0 +1,47 @@
+body{
+background-color: brown;
+background-image:url("static/images/img_4.png");
+}
+
+.index-bar h1{
+    font-style : italic;
+    color:black;
+}
+.index-bar{
+        width:60%;
+        display: flex;
+        align-items:center;
+        flex-direction:column;
+        margin:0 auto;
+}
+.index-bar a{
+        color:black;
+        font-family:cursive;
+        font-size:20px;
+}
+.iamges-index{
+    height:100px;
+}
+
+.nav-bar{
+width:70%;
+height:30rem;
+margin:0 auto;
+}
+
+.images{
+height:100%;
+padding:1px;
+    border:10px outset white;
+}
+.navigation{
+    display:flex;
+    justify-content:space-between;
+}
+
+.navigation a{
+color:white;
+text-decoration:none;
+font-family:cursive;
+font-size:20px;
+}

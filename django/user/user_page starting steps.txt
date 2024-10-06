@@ -1,0 +1,19 @@
+step 1. create templates directory in myapp and create all the html files in it.
+
+step 2. create function in views.py file to call html pages like:
+
+	def indexpage(request):
+    		return render(request,"index.html")
+
+step 3. create a new py file called urls.py in myapp directory and create path for html files like:
+
+	from django.urls import path
+	from . import views
+	urlpatterns = [
+    		path('', views.indexpage,name="index"),
+    		path('about',views.aboutpage,name="about")
+	]
+
+step 4. go to urls.py in project directory import include with this header "from django.urls import path, include" and write a new path in urlpatterns data-dictonary like :
+
+	"path("",include("myapp.urls"))"

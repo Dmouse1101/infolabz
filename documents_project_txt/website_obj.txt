@@ -1,0 +1,11 @@
+objective:
+	->the primary objective of this website is to provide pet related informaion. currently no one knows more about pet care so our website provide a information regarding animals and how to take care of them, also we provide services like:- book a vet,search nearby pet shops,helpline no etc.
+	->we create a portal for user so they can get a inquiry for adopting a pet,make Donation.
+	->there are two category of user we have registered user able to use our services and guest user is able to see them only. 
+
+advantages:
+	->user get educate towards different animals related things.
+	->street animals gets better treatment.
+	->
+	
+disadvantages:

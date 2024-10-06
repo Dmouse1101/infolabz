@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Manage Product Details</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Description</th>
+                    <th>Product Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data%}
+                <tr>
+                    <td>{{item.propname}}</td>
+                    <td>{{item.proprice}}</td>
+                    <td>{{item.prodesc}}</td>
+                    <td><img src="media/{{item.proimage}}" alt="" width="80px"></td>
+                    <td><span>
+                        <button id="edit">Edit</button>
+                        <button id="delete">Delete</button>
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

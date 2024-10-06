@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Product Details</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .product-card {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Product Details</h2>
+        <!-- Add Product Button -->
+        <a href="/showproduct" class="btn btn-success mb-3">Add Product</a>
+<!--        <a href="/singleproduct" class="btn btn-success mb-3">Add Product</a>-->
+
+        <!-- Product Grid -->
+        <div class="row">
+            <!-- Product 1 -->
+            {%for i in data %}
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                <a href="/singleproduct/{{i.id}}">
+                    <img src="media/{{i.pimage}}" alt="Product 1" class="product-img">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.pname}}</h5>
+                        <p class="card-text"> {{i.pprice}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script to open Single Product Page -->
+   
+</body>
+</html>

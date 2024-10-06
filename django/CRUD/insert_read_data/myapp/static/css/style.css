@@ -1,0 +1,59 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+    background-color: aliceblue;
+}
+.main-container{
+    width: 70%;
+    margin: 10vh auto 0;
+}
+
+.main-container table{
+    background-color: white;
+    text-align: center;
+    margin: 10px;
+}
+
+.main-container th{
+    padding:20px;
+}
+
+.main-container tr{
+    box-shadow: 1px 1px;
+}
+
+.main-container td {
+    padding-top: 15px;
+    vertical-align: top;
+}
+
+.main-container td:last-child{
+    width: 10vw;
+}
+
+
+#edit,#delete{
+    margin: 0 6px;
+    padding: 4px;
+    font-size: medium;
+    cursor: pointer;
+    font-family: cursive;
+    border-radius: 10px;
+}
+
+#edit{
+    float: left;
+    border: none;
+    background-color:forestgreen;
+    color: white;
+}
+#delete{
+    float: left;
+    border: none;
+    background-color:red;
+    color: white;
+}

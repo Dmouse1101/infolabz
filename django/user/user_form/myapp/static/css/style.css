@@ -1,0 +1,57 @@
+body{
+    background-image: linear-gradient(to right,rgb(52, 180, 249),rgb(215, 5, 215));
+}
+.main-container{
+    width:38%;
+    margin:60px auto 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:whitesmoke;
+    border-radius: 38px;
+}
+.main-container h2{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main-form{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-form div {
+    margin: 20px;
+    width: 100%;
+    font-family:cursive;
+}
+
+.main-form span{
+    margin-right:13px;
+    align-self:center;
+    align-items: center;
+}
+
+.main-form input{
+    width:270px;
+    height: 30px;
+    border: none;
+    box-shadow: 1px 1px 1px ;
+    outline: none;
+}
+.main-form textarea{
+    width: 272px;
+    border: none;
+    box-shadow: 1px 1px 1px ;
+    resize: none;
+    outline: none;
+}
+.main-form div .submit {
+    width: 55%;
+    padding: 0;
+    border:none;
+    color:white;
+    background-image: linear-gradient(to right,rgb(52, 180, 249),rgb(215, 5, 215));
+    margin-left:90px;
+    border-radius: 50px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contact us </title>
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+<body>
+    {% endif %}
+    <div class="main-container">
+        <h2>Contact us </h2>
+        <div class="main-form">
+            <!--form using post method -->
+            <form method="post" action='/fetchcontactdetail'>
+                {% csrf_token %}
+                <div>
+                    <span>Name:</span>
+                    &nbsp&nbsp&nbsp
+                    <input type="text" name="username">
+                </div>
+
+                <div>
+                    <span>Email:</span>
+                    &nbsp&nbsp&nbsp&nbsp
+                    <input type="email" name="useremail">
+                </div>
+
+                <div>
+                    <span>Mobile:</span>
+                    &nbsp&nbsp
+                    <input type="tel" name="userphone">
+                </div>
+
+                <div>
+                    <span>Message:</span>
+                    <textarea rows="5" cols="18" name="usermsg"></textarea>
+                </div>
+                <div>
+                    <input type="submit" class="submit" name="submit">
+                </div>
+            </form>
+        </div>
+        <br />
+        {% if pname %}
+        <table border="1">
+            <tr>
+                <td>Name :</td>
+                <td>{{ pname }}</td>
+            </tr>
+            <tr>
+                <td>Email :</td>
+                <td>{{ pmail }}</td>
+            </tr>
+            <tr>
+                <td>Phone :</td>
+                <td>{{ pno }}</td>
+            </tr>
+            <tr>
+                <td>Message:</td>
+                <td>{{ pmsg }}</td>
+            </tr>
+        </table>
+        {% else %}
+        <p>Please insert details</p>
+    </div>
+</body>
+</html>

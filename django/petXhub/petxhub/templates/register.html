@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %} PetXhub | Register{% endblock %}
+
+{% block main %}
+<!--/inner-page-->
+<div class="inner-banner">
+</div>
+<section class="w3l-breadcrumb">
+  <div class="container">
+    <ul class="breadcrumbs-custom-path">
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Login</li>
+    </ul>
+  </div>
+</section>
+<!--//inner-page-->
+
+<section class="wthree-row py-5 about-main" id="contact">
+  <div class="map-content-9 pt-lg-5">
+    <h5 class="mb-sm-4 mb-3">Login Details</h5>
+    <form id="register"  method="post" class="mx-auto" action="/registeruser">
+      {% csrf_token %}
+      <div class="twice-two">
+        <input type="text" class="form-control" name="fname" placeholder="First Name" required>
+        <input type="text" class="form-control" name="lname" placeholder="Last Name" required>
+      </div>
+      <div class="twice-two">
+        <input type="email" class="form-control" name="email" placeholder="Email" required>
+        <input type="tel" class="form-control" pattern="[6789][0-9]{9}" name="phone" placeholder="Phone Number" required>
+      </div>
+      <div class="twice">
+        <select name="role" class="form-control">
+          <option selected disabled>Select-option</option>
+          <option value="vet">Vet</option>
+          <option value="user">User</option>
+        </select>
+      </div>
+      <div class="twice-two mt-4">
+        <input type="password"id="pwd1" class="form-control" name="password1" placeholder="Password" required>
+        <input type="password"id="pwd2" class="form-control" name="password2" placeholder="confirm password" required>
+        <small id="errorMsg" class="text-danger"></small>
+      </div>
+      <span><a class="for-pwd text-success" href="/login.html">Already Registered Login ?</a></span>
+      <div class="text-two">
+        <button type="submit" id="submit" class="btn btn-primary btn-style mt-4 d-sm-inline d-block">Register</button>
+      </div><br>
+    </form>
+  </div>
+</section>
+<script>
+  function validationForm(formId) {
+    console.log("hiii");
+    const form = document.getElementById(formId)
+    const msg = form.querySelector('#errorMsg');
+    form.addEventListener('submit', (e) => {
+      let message = null;
+      let pwd1 = form.querySelector('[name="password1"]').value.trim();
+      let pwd2 = form.querySelector('[name="password2"]').value.trim();
+      let regExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
+      if (pwd1.length < 8 || pwd1.length > 16) {
+        message = "Password must be 8 to 16 characters";
+        e.preventDefault();
+      }
+      else if (pwd1 !== pwd2) {
+        message = "Password doesn't match";
+        e.preventDefault();
+      }
+      else if(!regExp.test(pwd1)){
+        message = "Password must contain 1 uppercase, 1 lowercase,1 number and a special character";
+        e.preventDefault();
+      }
+      msg.innerHTML = message;
+    })
+  }
+  validationForm('register')
+</script>
+{% endblock %}

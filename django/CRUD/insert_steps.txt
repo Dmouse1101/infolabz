@@ -1,0 +1,57 @@
+-------------------------------insert normal data -------------------------------
+
+step 1: create a form in html file with a specify name to the input field.
+
+step2: create view, model and admin class for the data to store it in a database.
+
+step3: then insert data in the model using this code in view file.
+
+	insertdata = contactus(name=uname,email=uemail,phone=uphone,message=umessage)
+    	insertdata.save()
+
+-------------------------------insert image data -------------------------------
+
+step 1: complete all the basic steps for inserting image in database.
+
+step 2:  <form action="/insertproduct" enctype="multipart/form-data" method="post">
+
+
+-------------------------------view inserted data from DB-------------------------------
+
+step 1: fetch data from DB in views using objects.all() like below and pass it to the html page.
+	
+	" fetchdata = insertproductdata.objects.all()
+    	context = {
+        	'data':fetchdata
+    	}
+    	return render(request,'showproduct.html',context)"
+--> for returning this context using different views 
+	return redirect("/")
+
+step 2: print in the html page using for loop so all the fetch details been displayed 
+
+	{%for i in data %}
+		{{i.pname}}
+		{{i.pprice}}
+		{{i.piamge}}
+		{{i.pdesc}}
+	{% endfor %}
+-------------------------------pass id of inserted data from DB to another page-------------------------------
+step 1: make url of the page to accept the id like this
+
+	path('singleproduct/<int:pid>',views.singleproduct,name='singleproduct')
+
+step 2: then change it's view like this 
+	
+	def singleproduct(request, pid):
+    		pro_data = insertproductdata.objects.get(id=pid)
+    		context = {
+        		'data':pro_data
+    		}
+    	return render(request,'singleproduct.html',context)
+
+then use the step no 2 from "view inserted data from DB" to display the data.
+
+
+
+
